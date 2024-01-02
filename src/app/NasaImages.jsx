@@ -64,8 +64,8 @@ const NasaImages = () => {
   };
 
   return (
-    <div className=' buscador flex-wrap '>
-      <div className="mb-4  flex justify-center mt-20 ">
+    <div className='buscador flex-wrap text-center items-center'>
+      <div className="mb-4 flex justify-center mt-20">
         <input
           type="text"
           value={searchTerm}
@@ -78,14 +78,14 @@ const NasaImages = () => {
         {currentImages.map((image) => (
           <div
             key={image.data[0].nasa_id}
-            className="card bg-base-100 shadow-xl flex flex-col"
+            className="card bg-base-100 shadow-xl flex flex-col mx-auto items-center"
             onClick={() => handleImageClick(image)}
           >
             <figure className="flex-grow">
               <img
                 src={image.links[0].href}
                 alt={image.data[0].title}
-                className="w-full h-48 object-cover"
+                className="w-full h-48 object-cover mx-auto"
               />
             </figure>
           </div>
@@ -131,7 +131,6 @@ const NasaImages = () => {
             <div className="p-4">
               <h2 className="text-lg font-semibold">{selectedImage.data[0].title}</h2>
               <p className="text-gray-700">{selectedImage.details[0]?.description}</p>
-              {/* Agrega aquí más detalles según la estructura de la API */}
             </div>
           </div>
         </div>
