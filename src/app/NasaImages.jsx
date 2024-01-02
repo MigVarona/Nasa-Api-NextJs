@@ -88,7 +88,7 @@ const NasaImages = () => {
               <img
                 src={image.links[0].href}
                 alt={image.data[0].title}
-                className="w-full h-full object-cover mx-auto"
+                className="w-full h-full object-cover mx-auto rounded-md"
               />
             </figure>
           </div>
