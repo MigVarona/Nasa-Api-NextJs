@@ -65,7 +65,7 @@ const NasaImages = () => {
 
   return (
     <div className='buscador flex-wrap text-center items-center'>
-      <div className="mb-4 flex justify-center mt-20">
+      <div className="mb-4 flex justify-center mt-20 ">
         <input
           type="text"
           value={searchTerm}
@@ -74,14 +74,14 @@ const NasaImages = () => {
           placeholder="Enter search term"
         />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mr-20 ml-10 gap-10 mt-20 flex-wrap">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mr-20 ml-10 gap-10 mt-20 flex-wrap items-center">
         {currentImages.map((image) => (
           <div
             key={image.data[0].nasa_id}
-            className="card bg-base-100 shadow-xl flex flex-col mx-auto items-center"
+            className="card bg-base-100 shadow-xl flex flex-col mx-auto items-center bg-black"
             onClick={() => handleImageClick(image)}
           >
-            <figure className="flex-grow">
+            <figure className="flex-grow mx-auto items-center ml-8">
               <img
                 src={image.links[0].href}
                 alt={image.data[0].title}

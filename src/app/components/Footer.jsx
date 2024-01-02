@@ -1,7 +1,9 @@
 function Footer() {
-    return ( <footer className="footer p-10  text-neutral-content">
+    return ( 
+    
+    <footer className="footer p-10  text-neutral-content flex justify-center gap-40 flex-wrap">
     <nav>
-      <header className="footer-title">Services</header> 
+      <header className="footer-title gap-10">Services</header> 
       <a className="link link-hover">Branding</a>
       <a className="link link-hover">Design</a>
       <a className="link link-hover">Marketing</a>
