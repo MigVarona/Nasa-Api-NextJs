@@ -52,16 +52,19 @@ const NasaImages = () => {
     setSelectedImage(null);
   };
 
+  const handlePageClick = (pageNumber) => {
+    setCurrentPage(pageNumber);
+
+    // Agregar desplazamiento automático hacia arriba
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const indexOfLastImage = currentPage * imagesPerPage;
   const indexOfFirstImage = indexOfLastImage - imagesPerPage;
   const currentImages = images.slice(indexOfFirstImage, indexOfLastImage);
 
   const totalPages = Math.ceil(images.length / imagesPerPage);
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
-
-  const handlePageClick = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
 
   return (
     <div className='buscador flex-wrap text-center items-center'>
@@ -85,7 +88,7 @@ const NasaImages = () => {
               <img
                 src={image.links[0].href}
                 alt={image.data[0].title}
-                className="w-full h-48 object-cover mx-auto"
+                className="w-full h-full object-cover mx-auto"
               />
             </figure>
           </div>
