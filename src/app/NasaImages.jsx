@@ -64,8 +64,8 @@ const NasaImages = () => {
   };
 
   return (
-    <div className='buscador flex-wrap'>
-      <div className="mb-4 flex justify-center mt-20">
+    <div className=' buscador flex-wrap '>
+      <div className="mb-4  flex justify-center mt-20 ">
         <input
           type="text"
           value={searchTerm}
@@ -74,7 +74,7 @@ const NasaImages = () => {
           placeholder="Enter search term"
         />
       </div>
-      <div className="grid grid-cols-2 lg:grid-cols-4 mr-20 ml-10 gap-10 mt-20 flex-wrap">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mr-20 ml-10 gap-10 mt-20 flex-wrap">
         {currentImages.map((image) => (
           <div
             key={image.data[0].nasa_id}
@@ -85,7 +85,7 @@ const NasaImages = () => {
               <img
                 src={image.links[0].href}
                 alt={image.data[0].title}
-                className="w-full object-cover"
+                className="w-full h-48 object-cover"
               />
             </figure>
           </div>
