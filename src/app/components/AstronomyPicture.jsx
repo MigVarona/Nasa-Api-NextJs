@@ -1,5 +1,4 @@
-// components/AstronomyPicture.js
-"use client"
+"use client";
 import React, { useState, useEffect } from 'react';
 
 const AstronomyPicture = () => {
@@ -27,14 +26,17 @@ const AstronomyPicture = () => {
         <div key={apodData.date} className="max-w-lg p-4 shadow-md text-gray-500 mx-auto">
           <div className="flex justify-between pb-4 ">
             <div className="flex items-center">
-              
+              {/* ... */}
             </div>
-            
           </div>
           <div className="space-y-4">
             <div className="space-y-2">
               {apodData.media_type === 'image' ? (
-                <img src={apodData.url} alt={apodData.title} className="block object-cover object-center w-full rounded-md h-72 dark:bg-gray-500" />
+                <img
+                  src={apodData.url}
+                  alt={apodData.title}
+                  className="block object-cover object-center w-full rounded-md h-72 dark:border-gray-500"
+                />
               ) : (
                 <iframe
                   title={apodData.title}
@@ -43,7 +45,7 @@ const AstronomyPicture = () => {
                   src={apodData.url}
                   frameBorder="0"
                   allowFullScreen
-                  className="rounded-md dark:bg-gray-500"
+                  className="rounded-md dark:border-gray-500"
                 />
               )}
               <div className="flex items-center text-xs">
