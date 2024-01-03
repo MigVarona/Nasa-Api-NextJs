@@ -3,6 +3,8 @@ import Footer from './components/Footer';
 import Nav from "./components/Nav";
 import Hero from "@/app/components/Hero"
 import Herodos from "@/app/components/Herodos"
+import Herotres from "@/app/components/Herotres"
+
 
 
 export default function Home() {
@@ -11,6 +13,9 @@ export default function Home() {
       <Nav />
       <Hero />
       <Herodos />
+      <Herotres />
+      
+    
       <div>
         <div>
         </div>

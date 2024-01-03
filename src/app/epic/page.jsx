@@ -1,7 +1,5 @@
 
-import { Galleria } from 'primereact/galleria';
-        
-import AstronomyPicture from '../components/AstronomyPicture';
+import Epic from '../components/Epic';
 import Footer from '../components/Footer';
 import Nav from "../components/Nav";
 
@@ -11,7 +9,7 @@ export default function Link() {
       <Nav />
       <div>
         <div>
-         <AstronomyPicture />
+         <Epic />
         </div>
         <div>
         <div className="bg-white h-[0.5px] mt-10"></div>
