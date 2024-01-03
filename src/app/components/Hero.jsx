@@ -1,112 +1,21 @@
-import React from "react";
-import Image from "next/image";
-
-export default function Hero() {
-  return (
-    <div className="relative overflow-hidden bg-black">
-      <div className="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
-        <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
-          <div className="sm:max-w-lg">
-            
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                NASA
-              </h1>
-              <p className="mt-4 text-xl text-gray-500">
-                Venturing beyond the bounds of the universe, inspiring the future of humanity: NASA, where dreams reach for the stars
-              </p>
-              <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-      <div class="grid grid-cols-1 flex-row-reverse gap-x-8 gap-y-6 text-base font-semibold leading-7  text-gray-300 sm:grid-cols-2 md:flex lg:gap-x-10">
-        <a href="/files">NASA FILES <span aria-hidden="true">&rarr;</span></a>
-     
-      </div>
-      </div>
-            
-          </div>
-          <div>
-            <div className="mt-10">
-              {/* Decorative image grid */}
-              <div
-                aria-hidden="true"
-                className="pointer-events-none lg:absolute lg:inset-y-0 lg:mx-auto lg:w-full lg:max-w-7xl"
-              >
-                <div className="absolute flex-wrap transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
-                  <div className="flex items-center space-x-6 lg:space-x-8">
-                    <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-                      <div className="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100 ">
-                        <Image
-                          src="/4.jpg"
-                          alt=""
-                          className="h-full w-full object-cover object-center"
-                          width={176}
-                          height={256}
-                        />
-                      </div>
-                      <div className="h-64 w-44 overflow-hidden rounded-lg">
-                        <Image
-                          src="/5.webp"
-                          alt=""
-                          className="h-full w-full object-cover object-center"
-                          width={176}
-                          height={256}
-                        />
-                      </div>
-                    </div>
-                    <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-                      <div className="h-64 w-44 overflow-hidden rounded-lg">
-                        <Image
-                          src="/6.webp"
-                          alt=""
-                          className="h-full w-full object-cover object-center"
-                          width={176}
-                          height={256}
-                        />
-                      </div>
-                      <div className="h-64 w-44 overflow-hidden rounded-lg">
-                        <Image
-                          src="/7.webp"
-                          alt=""
-                          className="h-full w-full object-cover object-center"
-                          width={176}
-                          height={256}
-                        />
-                      </div>
-                      <div className="h-64 w-44 overflow-hidden rounded-lg">
-                        <Image
-                          src="/8.webp"
-                          alt=""
-                          className="h-full w-full object-cover object-center"
-                          width={176}
-                          height={256}
-                        />
-                      </div>
-                    </div>
-                    <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-                      <div className="h-64 w-44 overflow-hidden rounded-lg">
-                        <Image
-                          src="/9.gif"
-                          alt=""
-                          className="h-full w-full object-cover object-center"
-                          width={176}
-                          height={256}
-                        />
-                      </div>
-                      <div className="h-64 w-44 overflow-hidden rounded-lg">
-                        <Image
-                          src="/3.jpg"
-                          alt=""
-                          className="h-full w-full object-cover object-center"
-                          width={176}
-                          height={256}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+function Hero() {
+  return ( <section className="dark:bg-gray-800 dark:text-gray-100">
+	<div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
+		<div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+			<img src="/10.jpg" alt="" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
+		</div>
+		<div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
+			<a href="/Picture"><h1 className="text-5xl font-bold leadi sm:text-6xl">Explore the wonders of space and Earth with NASA daily.
+				<span className="dark:text-violet-400"></span>
+			</h1>
+			<p className="mt-6 mb-8 text-lg sm:mb-12">
+				
+			</p>
+      </a>
+			
+		</div>
+	</div>
+</section> );
 }
+
+export default Hero;
