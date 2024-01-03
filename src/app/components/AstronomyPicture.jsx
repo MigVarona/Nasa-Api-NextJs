@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 const AstronomyPicture = () => {
   const [apodDataList, setApodDataList] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const fetchLatestMedia = async () => {
     try {
@@ -11,6 +12,7 @@ const AstronomyPicture = () => {
       );
       const dataList = await response.json();
       setApodDataList(dataList);
+      setLoading(false); // Marcar la carga como completa
     } catch (error) {
       console.error('Error fetching latest APOD data:', error);
     }
@@ -21,46 +23,53 @@ const AstronomyPicture = () => {
   }, []);
 
   return (
-    <div className="space-y-4">
-      {apodDataList.map((apodData) => (
-        <div key={apodData.date} className="max-w-lg p-4 shadow-md text-gray-500 mx-auto">
-          <div className="flex justify-between pb-4 ">
-            <div className="flex items-center">
-              {/* ... */}
-            </div>
-          </div>
-          <div className="space-y-4">
-            <div className="space-y-2">
-              {apodData.media_type === 'image' ? (
-                <img
-                  src={apodData.url}
-                  alt={apodData.title}
-                  className="block object-cover object-center w-full rounded-md h-72 dark:border-gray-500"
-                />
-              ) : (
-                <iframe
-                  title={apodData.title}
-                  width="100%"
-                  height="400"
-                  src={apodData.url}
-                  frameBorder="0"
-                  allowFullScreen
-                  className="rounded-md dark:border-gray-500"
-                />
-              )}
-              <div className="flex items-center text-xs">
-                <span>{apodData.date}</span>
+    <div className="flex flex-col min-h-screen">
+      <div className="flex-grow flex flex-col items-center justify-center">
+        {loading && (
+          <div className="w-16 h-16 border-4 border-dashed rounded-full animate-ping dark:border-violet-400 mb-4"></div>
+        )}
+        {apodDataList.map((apodData) => (
+          <div key={apodData.date} className="max-w-lg p-4 shadow-md text-gray-500 mx-auto">
+            <div className="flex justify-between pb-4 ">
+              <div className="flex items-center">
+                {/* ... Puedes agregar más contenido aquí si es necesario */}
               </div>
             </div>
-            <div className="space-y-2">
-              <a rel="noopener noreferrer" href="#" className="block">
-                <h3 className="text-xl font-semibold dark:text-violet-400">{apodData.title}</h3>
-              </a>
-              <p className="leadi dark:text-gray-400 mt-4 mb-10">{apodData.explanation}</p>
+            <div className="space-y-4">
+              <div className="space-y-2">
+                {apodData.media_type === 'image' ? (
+                  <img
+                    src={apodData.url}
+                    alt={apodData.title}
+                    className="block object-cover object-center w-full rounded-md h-72 dark:border-gray-500"
+                  />
+                ) : (
+                  <iframe
+                    title={apodData.title}
+                    width="100%"
+                    height="400"
+                    src={apodData.url}
+                    frameBorder="0"
+                    allowFullScreen
+                    className="rounded-md dark:border-gray-500"
+                  />
+                )}
+                <div className="flex items-center text-xs">
+                  <span>{apodData.date}</span>
+                </div>
+              </div>
+              <div className="space-y-2">
+                <a rel="noopener noreferrer" href="#" className="block">
+                  <h3 className="text-xl font-semibold dark:text-violet-400">{apodData.title}</h3>
+                </a>
+                <p className="leadi dark:text-gray-400 mt-4 mb-10">{apodData.explanation}</p>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
+      
+     
     </div>
   );
 };

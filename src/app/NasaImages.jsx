@@ -9,10 +9,13 @@ const NasaImages = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [imagesPerPage] = useState(20);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchImages = async () => {
       try {
+        setLoading(true);
+
         const response = await axios.get(
           `https://images-api.nasa.gov/search?media_type=image&keywords=${searchTerm}`,
           {
@@ -21,9 +24,12 @@ const NasaImages = () => {
             },
           }
         );
+
         setImages(response.data.collection.items);
       } catch (error) {
         console.error('Error fetching NASA images:', error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -54,8 +60,6 @@ const NasaImages = () => {
 
   const handlePageClick = (pageNumber) => {
     setCurrentPage(pageNumber);
-
-    // Agregar desplazamiento automático hacia arriba
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -77,22 +81,26 @@ const NasaImages = () => {
           placeholder="Enter search term"
         />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mr-20 ml-10 gap-10 mt-20 flex-wrap items-center">
-        {currentImages.map((image) => (
-          <div
-            key={image.data[0].nasa_id}
-            className="card bg-base-100 shadow-xl flex flex-col mx-auto items-center bg-black"
-            onClick={() => handleImageClick(image)}
-          >
-            <figure className="flex-grow mx-auto items-center ml-8">
-              <img
-                src={image.links[0].href}
-                alt={image.data[0].title}
-                className="w-full h-full object-cover mx-auto rounded-md"
-              />
-            </figure>
-          </div>
-        ))}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mr-20 ml-10 gap-10 mt-20 flex flex-wrap items-center justify-center">
+        {loading ? (
+          <div className=""></div>
+        ) : (
+          currentImages.map((image) => (
+            <div
+              key={image.data[0].nasa_id}
+              className="card bg-base-100 shadow-xl flex flex-col mx-auto items-center bg-black"
+              onClick={() => handleImageClick(image)}
+            >
+              <figure className="flex-grow mx-auto items-center ml-8">
+                <img
+                  src={image.links[0].href}
+                  alt={image.data[0].title}
+                  className="w-full h-full object-cover mx-auto rounded-md"
+                />
+              </figure>
+            </div>
+          ))
+        )}
       </div>
       <div className="mt-10 flex justify-center text-white">
         <div className="join">
