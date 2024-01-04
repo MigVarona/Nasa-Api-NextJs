@@ -24,7 +24,7 @@ export default function Nav() {
               <span className="sr-only">Your Company</span>
               <img
                 className="h-20 w-auto"
-                src="/1.jpg"
+                src="/logo.png"
                 alt=""
               />
             </a>

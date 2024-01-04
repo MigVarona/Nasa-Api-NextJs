@@ -6,6 +6,7 @@ import { Galleria } from 'primereact/galleria';
 const Epic = () => {
   const [epicData, setEpicData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   useEffect(() => {
     const fetchEpicImages = async () => {
@@ -34,12 +35,20 @@ const Epic = () => {
     alt: image.caption,
   }));
 
+  const handleThumbnailMouseOver = (event, index) => {
+    // Puedes realizar acciones adicionales al hacer hover sobre la miniatura
+    // Por ejemplo, puedes mostrar información adicional o cambiar estilos.
+    console.log('Mouse over on thumbnail:', index);
+  };
+
   return (
-    <div className="flex justify-center items-center h-screen">
+    
+    <div className="flex flex-col items-center">
+      
+    <h1  className="text-2xl font-bold text-gray-300 mb-4 mt-20">DSCOVR: EPIC</h1>
       {loading ? (
         <div className="text-2xl text-gray-600">
           <div className="w-16 h-16 border-4 border-dashed rounded-full animate-ping dark:border-violet-400"></div>
-          
         </div>
       ) : (
         <div className="max-w-screen-lg">
@@ -48,9 +57,23 @@ const Epic = () => {
             numVisible={5}
             style={{ maxWidth: '640px', margin: '0 auto' }}
             item={(item) => (
-              <img src={item.itemImageSrc} alt={item.alt} style={{ width: '100%' }} />
+              <img
+                src={item.itemImageSrc}
+                alt={item.alt}
+                style={{ width: '80%' }}
+                loading="lazy"
+              />
             )}
-            thumbnail={(item) => <img src={item.thumbnailImageSrc} alt={item.alt} />}
+            thumbnail={(item, index) => (
+              <img
+                src={item.thumbnailImageSrc}
+                alt={item.alt}
+                onMouseOver={(event) => handleThumbnailMouseOver(event, index)}
+                onClick={() => setSelectedImageIndex(index)}
+                className={index === selectedImageIndex ? 'selected-thumbnail' : ''}
+                loading="lazy" // Añadido lazy aquí
+              />
+            )}
           />
         </div>
       )}
