@@ -81,11 +81,13 @@ const NasaImages = () => {
           placeholder="Enter search term"
         />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mr-20 ml-10 gap-10 mt-20 flex flex-wrap items-center justify-center">
-        {loading ? (
-          <div className=""></div>
-        ) : (
-          currentImages.map((image) => (
+      {loading ? (
+        <div className="flex items-center justify-center h-screen">
+          <div className="animate-spin mb-60 rounded-full h-16 w-16 border-t-4 border-blue-500"></div>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mr-20 ml-10 gap-10 mt-20 flex flex-wrap items-center justify-center">
+          {currentImages.map((image) => (
             <div
               key={image.data[0].nasa_id}
               className="card bg-base-100 shadow-xl flex flex-col mx-auto items-center bg-black"
@@ -99,9 +101,9 @@ const NasaImages = () => {
                 />
               </figure>
             </div>
-          ))
-        )}
-      </div>
+          ))}
+        </div>
+      )}
       <div className="mt-10 flex justify-center text-white">
         <div className="join">
           {pageNumbers.map((number) => (

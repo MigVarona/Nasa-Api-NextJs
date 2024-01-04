@@ -28,7 +28,7 @@ const AstronomyPicture = () => {
     <div className="flex flex-col min-h-screen">
       <div className="flex-grow flex flex-col items-center justify-center">
         {loading && (
-          <div className="w-16 h-16 border-4 border-dashed rounded-full animate-ping dark:border-violet-400 mb-4"></div>
+          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500"></div>
         )}
         {apodDataList.map((apodData) => (
           <div key={apodData.date} className="max-w-lg p-4 shadow-md text-gray-500 mx-auto">

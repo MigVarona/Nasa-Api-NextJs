@@ -31,24 +31,19 @@ const Epic = () => {
 
   const imagesForGalleria = epicData.map((image) => ({
     itemImageSrc: `https://epic.gsfc.nasa.gov/archive/natural/${image.date.slice(0, 4)}/${image.date.slice(5, 7)}/${image.date.slice(8, 10)}/png/${image.image}.png`,
-    thumbnailImageSrc: `https://epic.gsfc.nasa.gov/archive/natural/${image.date.slice(0, 4)}/${image.date.slice(5, 7)}/${image.date.slice(8, 10)}/thumbs/${image.image}.jpg`, // Cambié la extensión de la miniatura a jpg
+    thumbnailImageSrc: `https://epic.gsfc.nasa.gov/archive/natural/${image.date.slice(0, 4)}/${image.date.slice(5, 7)}/${image.date.slice(8, 10)}/thumbs/${image.image}.jpg`,
     alt: image.caption,
   }));
 
   const handleThumbnailMouseOver = (event, index) => {
-    // Puedes realizar acciones adicionales al hacer hover sobre la miniatura
-    // Por ejemplo, puedes mostrar información adicional o cambiar estilos.
     console.log('Mouse over on thumbnail:', index);
   };
 
   return (
-    
-    <div className="flex flex-col items-center">
-      
-    
+    <div className="flex flex-col items-center justify-center h-screen">
       {loading ? (
         <div className="text-2xl text-gray-600">
-          <div className="w-16 h-16 border-4 border-dashed rounded-full animate-ping dark:border-violet-400"></div>
+          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500"></div>
         </div>
       ) : (
         <div className="max-w-screen-lg mt-10">
@@ -71,7 +66,7 @@ const Epic = () => {
                 onMouseOver={(event) => handleThumbnailMouseOver(event, index)}
                 onClick={() => setSelectedImageIndex(index)}
                 className={index === selectedImageIndex ? 'selected-thumbnail' : ''}
-                loading="lazy" // Añadido lazy aquí
+                loading="lazy"
               />
             )}
           />
