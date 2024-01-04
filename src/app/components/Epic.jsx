@@ -45,13 +45,13 @@ const Epic = () => {
     
     <div className="flex flex-col items-center">
       
-    <h1  className="text-2xl font-bold text-gray-300 mb-4 mt-20">DSCOVR: EPIC</h1>
+    
       {loading ? (
         <div className="text-2xl text-gray-600">
           <div className="w-16 h-16 border-4 border-dashed rounded-full animate-ping dark:border-violet-400"></div>
         </div>
       ) : (
-        <div className="max-w-screen-lg">
+        <div className="max-w-screen-lg mt-10">
           <Galleria
             value={imagesForGalleria}
             numVisible={5}
