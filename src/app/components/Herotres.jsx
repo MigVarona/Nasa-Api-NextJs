@@ -8,7 +8,7 @@ function Herotres() {
 		</div>
 		<div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
 			<a href="/epic"><h1 className="text-5xl font-bold text-slate-200 leadi sm:text-6xl">DSCOVR: EPIC
-Earth Polychromatic Imaging Camera
+Earth Imaging Camera
 				<span className="dark:text-violet-400"></span>
 			</h1>
 			<p className="mt-6 mb-8 text-lg sm:mb-12">
