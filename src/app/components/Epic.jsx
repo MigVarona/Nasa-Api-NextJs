@@ -1,5 +1,6 @@
 "use client"
 
+// Importaciones necesarias
 import React, { useState, useEffect } from 'react';
 import { Galleria } from 'primereact/galleria';
 
@@ -35,8 +36,13 @@ const Epic = () => {
     alt: image.caption,
   }));
 
-  const handleThumbnailMouseOver = (event, index) => {
-    console.log('Mouse over on thumbnail:', index);
+  const handleThumbnailTouchStart = (event, index) => {
+    console.log('Touch start on thumbnail:', index);
+  };
+
+  const handleThumbnailTouchEnd = (event, index) => {
+    console.log('Touch end on thumbnail:', index);
+    setSelectedImageIndex(index);
   };
 
   return (
@@ -63,10 +69,9 @@ const Epic = () => {
               <img
                 src={item.thumbnailImageSrc}
                 alt={item.alt}
-                onMouseOver={(event) => handleThumbnailMouseOver(event, index)}
-                onClick={() => setSelectedImageIndex(index)}
+                onTouchStart={(event) => handleThumbnailTouchStart(event, index)}
+                onTouchEnd={(event) => handleThumbnailTouchEnd(event, index)}
                 className={index === selectedImageIndex ? 'selected-thumbnail' : ''}
-                loading="lazy"
               />
             )}
           />
