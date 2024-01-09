@@ -1,11 +1,10 @@
-import React from 'react';
 import Footer from './components/Footer';
-import Nav from './components/Nav';
-import Hero from '@/app/components/Hero';
-import Herodos from '@/app/components/Herodos';
-import Herotres from '@/app/components/Herotres';
+import Nav from "./components/Nav";
+import Hero from "@/app/components/Hero";
+import Herodos from "@/app/components/Herodos";
+import Herotres from "@/app/components/Herotres";
 
-function Home() {
+export default function Home() {
   return (
     <div>
       <Nav />
@@ -22,5 +21,3 @@ function Home() {
     </div>
   );
 }
-
-export default Home;

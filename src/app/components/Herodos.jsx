@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const links = [
   { name: 'See archives', href: '/files' },
 ];
@@ -9,9 +11,10 @@ const stats = [
 export default function Herodos() {
   return (
     <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
-      <img
+      <Image
         src="/3.jpg"
         alt=""
+        width={800} height={600}
         className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
       />
       <div
