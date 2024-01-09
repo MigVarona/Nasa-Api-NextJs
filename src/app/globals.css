@@ -7,7 +7,7 @@ body {
 }
 
 header {
-height: 100px;
+  height: 100px;
   background-color: black !important;
 }
 
@@ -15,11 +15,8 @@ nav {
   background-color: black;
 }
 
-
-
 .primero {
-  background-color: black
-  ;
+  background-color: black;
 }
 
 .buscador {

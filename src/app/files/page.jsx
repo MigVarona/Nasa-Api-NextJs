@@ -1,5 +1,5 @@
 
-import NasaImages from '../NasaImages';
+import NasaImages from '../components/NasaImages';
 import Footer from '../components/Footer';
 import Nav from "../components/Nav";
 

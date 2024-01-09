@@ -1,7 +1,7 @@
-// components/NasaImages.js
 "use client";
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Image from "next/image";
 
 const NasaImages = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -136,7 +136,7 @@ const NasaImages = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            <img
+            <image
               src={selectedImage.links[0].href}
               alt={selectedImage.data[0].title}
               className="w-full h-auto"

@@ -1,7 +1,7 @@
-"use client";
-import React, { useState, useEffect } from 'react';
-import Link from "next/link"
+"use client"
 
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 const AstronomyPicture = () => {
   const [apodDataList, setApodDataList] = useState([]);
@@ -32,7 +32,7 @@ const AstronomyPicture = () => {
         )}
         {apodDataList.map((apodData) => (
           <div key={apodData.date} className="max-w-lg p-4 shadow-md text-gray-500 mx-auto">
-            <div className="flex justify-between pb-4 ">
+            <div className="flex justify-between pb-4">
               <div className="flex items-center">
                 {/* ... Puedes agregar más contenido aquí si es necesario */}
               </div>
@@ -70,8 +70,6 @@ const AstronomyPicture = () => {
           </div>
         ))}
       </div>
-      
-     
     </div>
   );
 };

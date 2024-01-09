@@ -1,6 +1,6 @@
 "use client"
 
-// Importaciones necesarias
+
 import React, { useState, useEffect } from 'react';
 import { Galleria } from 'primereact/galleria';
 

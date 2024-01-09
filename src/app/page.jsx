@@ -1,30 +1,26 @@
-
+import React from 'react';
 import Footer from './components/Footer';
-import Nav from "./components/Nav";
-import Hero from "@/app/components/Hero"
-import Herodos from "@/app/components/Herodos"
-import Herotres from "@/app/components/Herotres"
+import Nav from './components/Nav';
+import Hero from '@/app/components/Hero';
+import Herodos from '@/app/components/Herodos';
+import Herotres from '@/app/components/Herotres';
 
-
-
-export default function Home() {
+function Home() {
   return (
     <div>
       <Nav />
       <Hero />
       <Herodos />
       <Herotres />
-      
-    
+
       <div>
         <div>
-        </div>
-        <div>
-        <div class="bg-white  mt-10"></div>
-       
+          <div className="bg-white mt-10"></div>
           <Footer />
         </div>
       </div>
     </div>
   );
 }
+
+export default Home;
