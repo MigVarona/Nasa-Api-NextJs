@@ -11,7 +11,7 @@ Is a web application designed for exploring NASA's vast universe of data. Crafte
 | ----------------- | ------------------------------------------------------------------ |
 | Example Color | ![#000000](https://via.placeholder.com/10/0000002?text=+) #000000 |
 | Example Color | ![#708797](https://via.placeholder.com/10/708797?text=+) #708797 |
-| Example Color | ![#ffffff](https://via.placeholder.com/10/ffffff?text=+) #ffffff |
+| Example Color | ![#e2e8f0](https://via.placeholder.com/10/e2e8f0?text=+) #e2e8f0 |
 
 ## 🛠 Skills
 Javascript, HTML, Tailwind, React, NextJs, Jest
