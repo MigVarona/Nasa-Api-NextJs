@@ -4,7 +4,9 @@ Is a web application designed for exploring NASA's vast universe of data. Crafte
 
 ![Captura de pantalla 2024-02-05 112340](https://github.com/MigVarona/Daiyu-galaxy/assets/146460162/a7863f24-5bac-410d-8cb9-c991e92995da)
 
-![Captura de pantalla 2024-02-05 112408](https://github.com/MigVarona/Daiyu-galaxy/assets/146460162/c4a5b649-185c-4b86-aa27-5c6cb4cc8301)
+
+![Captura de pantalla 2024-02-05 112551](https://github.com/MigVarona/Daiyu-galaxy/assets/146460162/112e9681-9037-4925-86af-6bb3feed1d81)![Captura de pantalla 2024-02-05 112408](https://github.com/MigVarona/Daiyu-galaxy/assets/146460162/4e200bb9-b061-461f-87a3-c412fdf13879)
+
 
 
 ## Color Reference
