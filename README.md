@@ -9,8 +9,8 @@ Is a web application designed for exploring NASA's vast universe of data. Crafte
 
 | Color             | Hex                                                                |
 | ----------------- | ------------------------------------------------------------------ |
-| Example Color | ![#525252](https://via.placeholder.com/10/525252?text=+) #525252 |
-| Example Color | ![#282828](https://via.placeholder.com/10/282828?text=+) #282828 |
+| Example Color | ![#000000](https://via.placeholder.com/10/0000002?text=+) #000000 |
+| Example Color | ![#708797](https://via.placeholder.com/10/708797?text=+) #708797 |
 | Example Color | ![#ffffff](https://via.placeholder.com/10/ffffff?text=+) #ffffff |
 
 ## 🛠 Skills
